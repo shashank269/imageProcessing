@@ -1,0 +1,62 @@
+#include<iostream>
+
+#include<math.h>
+
+using namespace std;
+
+
+double facto( float n)
+
+{
+
+    if(n<1)
+
+    return 1;
+
+    else
+
+    return n*facto(n-1);
+
+   
+}
+
+
+float sumi(int x,int n)
+
+{
+    int i;float su=0;
+
+   
+    
+        for(i=1;i<=n;i++)
+
+        {
+            su=su+(pow(-1,i+1)*pow(x,(2*i)-1))/facto((2*i)-1);
+
+        }
+        return su;
+
+    
+}
+
+
+int main()
+
+{
+
+    int a,b;
+
+    cout<<"enter x";
+
+    cin>>a;
+
+    cout<<"enter n";
+
+    cin>>b;
+
+    cout<<"sum of series is : "<<sumi(a,b);
+    
+
+}
+
+ 

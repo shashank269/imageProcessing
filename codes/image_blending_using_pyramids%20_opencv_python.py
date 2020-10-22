@@ -3,10 +3,12 @@ import numpy as np
 apple = cv2.imread('apple.jpg')
 orange = cv2.imread('orange.jpg')
 
+
 apple_orange = np.hstack((apple[:, :256], orange[:, 256:]))
 
 # generate Gaussian pyramid for apple
 apple_copy = apple.copy()
+apple_copy=cv2.resize(256,256)
 gp_apple = [apple_copy]
 for i in range(7):
     apple_copy = cv2.pyrDown(apple_copy)

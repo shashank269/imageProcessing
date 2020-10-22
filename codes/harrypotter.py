@@ -25,7 +25,7 @@ Harry :  Hey !! Would you like to try my invisibility cloak ??
 cap = cv2.VideoCapture(0)
 
 # We give some time for the camera to setup
-time.sleep(3)
+time.sleep(5)
 count = 0
 background = 0
 
@@ -47,10 +47,10 @@ while(True):
 
 	# Generating mask to detect red color
 	lower_red = np.array([0, 120, 120])
-	upper_red = np.array([10, 255, 255])
+	upper_red = np.array([11, 255, 255])
 	mask1 = cv2.inRange(hsv, lower_red, upper_red)
     
-	lower_red = np.array([170, 120, 70])
+	lower_red = np.array([165, 120, 70])
 	upper_red = np.array([180, 255, 255])
 	mask2 = cv2.inRange(hsv, lower_red, upper_red)
 

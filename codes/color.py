@@ -13,11 +13,11 @@ while True:
 
      lower_red = np.array([0,50,120])
      upper_red = np.array([10,255,255])
-     lower_blue = np.array([94, 80, 0])
+     lower_blue = np.array([94, 70, 0])
      upper_blue = np.array([126, 255, 255])
-     lower_green = np.array([30,52,72])
+     lower_green = np.array([30,55,72])
      upper_green = np.array([90,255,255])
-     lower_yellow = np.array([25, 70, 120])
+     lower_yellow = np.array([25, 74, 120])
      upper_yellow = np.array([30, 255, 255])
 
      mask1 = cv2.inRange(hsv,lower_red,upper_red)
@@ -50,11 +50,12 @@ while True:
              cy = int(M["m01"]/ M["m00"])
 
              cv2.circle(frame,(cx,cy),7,(255,255,255),-1)
+          
              cv2.putText(frame,"Red",(cx-20,cy-20),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),2)
 
      for c in cnts2:
          area = cv2.contourArea(c)
-         if area > 5000:
+         if area > 6000:
              cv2.drawContours(frame, [c], -1, (0, 255, 0), 3)
 
              M = cv2.moments(c)
@@ -66,7 +67,7 @@ while True:
              cv2.putText(frame, "Blue", (cx-20, cy-20),cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
      for c in cnts3:
          area = cv2.contourArea(c)
-         if area > 5000:
+         if area > 6000:
 
 
              cv2.drawContours(frame,[c],-1,(0,255,0), 3)
